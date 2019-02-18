@@ -9,7 +9,6 @@ import { Collegue } from '../models';
 export class AccueilComponent implements OnInit {
 
   @Input() listeColleguesAccueil: Collegue[]
-  @Output() listeCollegues: Collegue[]
   valeur1 = 0;
   valeur2 = 3;
 
