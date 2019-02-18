@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Avis, Collegue } from '../models';
+import { DataService } from '../services/data.service';
 
 @Component({
   selector: 'app-collegue',
@@ -14,19 +15,12 @@ export class CollegueComponent implements OnInit {
   disabledBtn2 = false;
 
 
-  traiter(param: number) {
-    if (param == 1) {
-      this.collegue.score += 1;
-      this.message = "Un fervent des vrai Valars " + Avis.AIMER;
-    }
-    else {
-      this.collegue.score -= 1;
-      this.message = "Sale race inférieure, je te déteste : " + Avis.DETESTER;
-    }
+  traiter(param: Avis) {
+    this._srv.donnerUnAvis(this.collegue, param);
     this.testScore();
   }
 
-  constructor() {
+  constructor(private _srv: DataService) {
   }
 
   ngOnInit() {

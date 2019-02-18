@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, Output } from '@angular/core';
-import { Collegue } from '../models';
+import { DataService } from '../services/data.service';
 
 @Component({
   selector: 'app-accueil',
@@ -8,12 +8,12 @@ import { Collegue } from '../models';
 })
 export class AccueilComponent implements OnInit {
 
-  @Input() listeColleguesAccueil: Collegue[]
+  listeColleguesAccueil = this._srv.lister();
   valeur1 = 0;
   valeur2 = 3;
 
 
-  constructor() { }
+  constructor(private _srv: DataService) { }
 
   ngOnInit() {
   }
