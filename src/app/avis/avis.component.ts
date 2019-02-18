@@ -1,5 +1,4 @@
 import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
-import { CollegueComponent } from '../collegue/collegue.component';
 
 @Component({
   selector: 'app-avis',
