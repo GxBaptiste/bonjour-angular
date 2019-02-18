@@ -1,5 +1,5 @@
 <div class="row">
-  <div class="col-4" *ngFor=" let obj of listeCollegues | slice:0:3">
+  <div class="col-4" *ngFor=" let obj of listeCollegues | slice:val1:val2">
     <app-collegue [collegue]=obj></app-collegue>
   </div>
 </div>
