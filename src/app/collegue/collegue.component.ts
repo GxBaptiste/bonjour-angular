@@ -31,6 +31,7 @@ export class CollegueComponent implements OnInit {
 
   ngOnInit() {
     this.collegue.score = 0;
+    this.testScore();
   }
 
 
