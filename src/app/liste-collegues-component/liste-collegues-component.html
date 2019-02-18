@@ -1,5 +1,8 @@
 <div class="row">
-  <div class="col-4" *ngFor=" let obj of listeCollegues | slice:val1:val2">
+  <div class="col-4" *ngFor=" let obj of listeCollegues | slice:debut:fin">
     <app-collegue [collegue]=obj></app-collegue>
+  </div>
+  <div id="listeB">
+    <button *ngFor="let j of tabButton" type="button" (click)="clic1(j)">{{j+1}}</button>
   </div>
 </div>
