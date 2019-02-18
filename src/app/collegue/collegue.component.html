@@ -1,0 +1,9 @@
+<div>
+  <img src={{collegue.photoUrl}} />
+
+  <h2>{{collegue.pseudo}}</h2>
+  <p>{{collegue.score}}</p>
+
+  <app-avis (change)="traiter($event)" [btn]="disabledBtn1" [btn2]="disabledBtn2"></app-avis>
+  {{message}}
+</div>
