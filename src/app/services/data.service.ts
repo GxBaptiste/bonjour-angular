@@ -1,10 +1,17 @@
 import { Injectable } from '@angular/core';
 import { Collegue, Avis, Vote } from '../models';
+import { Observable, of, Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DataService {
+
+  subject = new Subject<Vote>();
+
+  // get sibjectObservable(): Observable<Vote> {
+  //   return this.subject.asObservable();
+  // }
 
   listeCollegues: Collegue[] = [
     {
@@ -54,63 +61,30 @@ export class DataService {
       photoUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcStp8Mmbggjshxp6gwoik4mv7ygmoSMyOJIVimUc7WE5zcOB0wtVw"
     }
   ]
-
-  listeVotes: Vote[] = [
-    {
-      collegue: this.listeCollegues[0],
-      avis: Avis.DETESTER
-    },
-    {
-      collegue: this.listeCollegues[1],
-      avis: Avis.AIMER
-    },
-    {
-      collegue: this.listeCollegues[2],
-      avis: Avis.AIMER
-    },
-    {
-      collegue: this.listeCollegues[3],
-      avis: Avis.AIMER
-    },
-    {
-      collegue: this.listeCollegues[4],
-      avis: Avis.AIMER
-    },
-    {
-      collegue: this.listeCollegues[5],
-      avis: Avis.DETESTER
-    },
-    {
-      collegue: this.listeCollegues[6],
-      avis: Avis.AIMER
-    },
-    {
-      collegue: this.listeCollegues[7],
-      avis: Avis.DETESTER
-    },
-    {
-      collegue: this.listeCollegues[8],
-      avis: Avis.AIMER
-    }
-  ]
+  listeVotes: Observable<Vote>[]
 
   constructor() { }
 
-  lister(): Collegue[] {
-    return this.listeCollegues;
+  lister(): Observable<Collegue[]> {
+    return of(this.listeCollegues);
   }
 
-  listerVotes(): Vote[] {
-    return this.listeVotes;
+  listerVotes(): Observable<Vote> {
+    return this.subject.asObservable();
   }
 
-  donnerUnAvis(collegue: Collegue, avis: Avis): Collegue {
+  donnerUnAvis(collegue: Collegue, avis: Avis): Observable<Collegue> {
     if (avis === Avis.AIMER) {
       collegue.score += 1
     }
     else {
       collegue.score -= 1
     }
-    return collegue;
+    let collegue2 = { ...collegue }
+    let aVote = { collegue: collegue2, avis }
+    this.subject.next(aVote);
+    return of(collegue2);
   }
+
+
 }
