@@ -34,4 +34,8 @@ export class AccueilComponent implements OnInit {
     this.valeur2 = 9
   }
 
+  refresh(): void {
+    window.location.reload();
+  }
+
 }

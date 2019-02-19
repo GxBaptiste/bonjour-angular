@@ -1,8 +1,13 @@
-<br>
-<br>
 <div id="bou">
-    <button type="button">Rafraichir la page</button>
+    <button type="button" (click)="refresh()" class="btn btn-secondary">Rafraichir la page</button>
 </div>
-
-<app-liste-collegues [listeCollegues]="listeColleguesAccueil"></app-liste-collegues>
-<app-historique-votes></app-historique-votes>
+<div class="row">
+    <div class="col-sm-8" id="divAll">
+        <h1>Liste des collègues</h1>
+        <app-liste-collegues [listeCollegues]="listeColleguesAccueil"></app-liste-collegues>
+    </div>
+    <div class="col-sm-4" id="divAll">
+        <h1> Historique</h1>
+        <app-historique-votes></app-historique-votes>
+    </div>
+</div>
