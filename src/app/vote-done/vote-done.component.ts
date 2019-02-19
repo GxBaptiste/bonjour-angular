@@ -9,7 +9,7 @@ import { DataService } from '../services/data.service';
 export class VoteDoneComponent implements OnInit {
 
   message = "Test"
-  cpt: number = 0
+  cpt: number
 
   constructor(private _srv: DataService) {
     this._srv.listerVotes().subscribe(
@@ -17,6 +17,7 @@ export class VoteDoneComponent implements OnInit {
         this.cpt += 1;
         this.afficherMsg();
       })
+    this.cpt = +sessionStorage.getItem("nombre")
   }
 
   ngOnInit() {
@@ -25,6 +26,7 @@ export class VoteDoneComponent implements OnInit {
 
   afficherMsg() {
     this.message = "Il y a eu " + this.cpt + " votes"
+    sessionStorage.setItem("nombre", String(this.cpt))
   }
 
 }
