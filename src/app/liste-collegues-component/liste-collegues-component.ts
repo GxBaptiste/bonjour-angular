@@ -11,6 +11,7 @@ export class ListeColleguesComponent implements OnInit {
   @Input() listeCollegues: Collegue[]
   debut: number = 0;
   fin: number = 3;
+  p: number = 1
   nbrButton: number;
   tabButton = [];
 
@@ -34,6 +35,7 @@ export class ListeColleguesComponent implements OnInit {
       this.nbrButton += 1;
     }
     this.remplirTab(this.nbrButton);
+
 
   }
 

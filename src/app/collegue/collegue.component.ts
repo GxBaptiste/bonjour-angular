@@ -16,7 +16,9 @@ export class CollegueComponent implements OnInit {
 
 
   traiter(param: Avis) {
-    this._srv.donnerUnAvis(this.collegue, param);
+    this._srv.donnerUnAvis(this.collegue, param).subscribe(
+      collegueAJour => this.collegue = collegueAJour
+    );
     this.testScore();
   }
 
@@ -29,11 +31,12 @@ export class CollegueComponent implements OnInit {
 
 
   testScore() {
-    if (this.collegue.score >= 5) {
+    console.log(this.collegue.score)
+    if (this.collegue.score >= 4) {
       this.disabledBtn1 = true
     } else {
       this.disabledBtn1 = false
-      if (this.collegue.score <= -5) {
+      if (this.collegue.score <= -4) {
         this.disabledBtn2 = true
       } else {
         this.disabledBtn2 = false

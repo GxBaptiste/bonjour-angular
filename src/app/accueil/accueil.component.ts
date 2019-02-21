@@ -9,18 +9,19 @@ import { Collegue } from '../models';
 })
 export class AccueilComponent implements OnInit {
 
-  listeColleguesAccueil: Collegue[]
+  listeColleguesAccueil: Collegue[] = []
   valeur1 = 0;
   valeur2 = 3;
 
 
   constructor(private _srv: DataService) {
-    this._srv.lister().subscribe(
-      valeur => this.listeColleguesAccueil = valeur
-    )
+
   }
 
   ngOnInit() {
+    this._srv.refresh().subscribe(
+      valeur => this.listeColleguesAccueil = valeur
+    )
   }
 
 
@@ -40,7 +41,9 @@ export class AccueilComponent implements OnInit {
   }
 
   refresh(): void {
-    window.location.reload();
+    this._srv.refresh().subscribe(
+      valeur => this.listeColleguesAccueil = valeur
+    )
   }
 
 }

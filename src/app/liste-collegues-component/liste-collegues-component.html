@@ -1,8 +1,8 @@
 <div class="row">
-  <div class="col-4" *ngFor=" let obj of listeCollegues | slice:debut:fin">
+  <div class="col-4" *ngFor=" let obj of listeCollegues | paginate: {itemsPerPage:3, currentPage: p }">
     <app-collegue [collegue]=obj></app-collegue>
   </div>
   <div id="listeB">
-    <button *ngFor="let j of tabButton" type="button" (click)="clic1(j)" class="btn btn-primary">{{j+1}}</button>
+    <pagination-controls (pageChange)="p = $event"></pagination-controls>
   </div>
 </div>
