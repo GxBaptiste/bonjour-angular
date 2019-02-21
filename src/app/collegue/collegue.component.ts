@@ -32,11 +32,15 @@ export class CollegueComponent implements OnInit {
 
   testScore() {
     console.log(this.collegue.score)
-    if (this.collegue.score >= 4) {
+    if (this.collegue.score >= 4)
+      this.collegue.score = 5;
+    if (this.collegue.score <= -4)
+      this.collegue.score = -5;
+    if (this.collegue.score >= 5) {
       this.disabledBtn1 = true
     } else {
       this.disabledBtn1 = false
-      if (this.collegue.score <= -4) {
+      if (this.collegue.score <= -5) {
         this.disabledBtn2 = true
       } else {
         this.disabledBtn2 = false
