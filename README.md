@@ -29,3 +29,5 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 [![Build Status](https://travis-ci.org/GxBaptiste/bonjour-angular.svg?branch=master)](https://travis-ci.org/GxBaptiste/bonjour-angular)
 
 https://gxbaptiste.github.io/bonjour-angular/
+
+La fausse base de données spring se trouve dans mon depot git top-collegue-backend
