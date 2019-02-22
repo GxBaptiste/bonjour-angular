@@ -1,7 +1,7 @@
 <div>
   <img src={{collegue.photoUrl}} />
 
-  <h2>{{collegue.pseudo | uppercase }}</h2>
+  <h2><a routerLink="/collegues/{{collegue.pseudo | uppercase }}">{{collegue.pseudo | uppercase }}</a></h2>
   <p>{{collegue.score | score}}</p>
 
   <app-avis (change)="traiter($event)" [btn]="disabledBtn1" [btn2]="disabledBtn2"></app-avis>

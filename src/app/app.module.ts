@@ -15,6 +15,12 @@ import { HttpClientModule } from '@angular/common/http';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { FormsModule } from '@angular/forms';
 import { NouveauCollegueTemplateFormComponent } from './nouveau-collegue-template-form/nouveau-collegue-template-form.component';
+import { MenuComponent } from './menu/menu.component';
+import { RouterModule } from '@angular/router';
+import { ROUTES } from './app.route';
+import { CollegueDetailComponent } from './collegue-detail/collegue-detail.component';
+import { TemplateCreateCollegueComponent } from './template-create-collegue/template-create-collegue.component';
+
 
 @NgModule({
   declarations: [
@@ -28,13 +34,17 @@ import { NouveauCollegueTemplateFormComponent } from './nouveau-collegue-templat
     ScorePipe,
     HistoriqueVotesComponent,
     VoteDoneComponent,
-    NouveauCollegueTemplateFormComponent
+    NouveauCollegueTemplateFormComponent,
+    MenuComponent,
+    CollegueDetailComponent,
+    TemplateCreateCollegueComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     NgxPaginationModule,
-    FormsModule
+    FormsModule,
+    RouterModule.forRoot(ROUTES)
   ],
   providers: [],
   bootstrap: [AppComponent]

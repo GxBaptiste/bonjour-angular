@@ -21,3 +21,15 @@ export interface Personne {
     pseudo: string,
     URLImage: string
 }
+
+export interface CollegueComplet {
+
+    matricule: string;
+    nom: string
+    prenom: string
+    email: string
+    adresse: string
+    photoUrl: string,
+    score: number,
+    pseudo: string
+}

@@ -1,0 +1,24 @@
+<div>
+  <img src={{collegueComplet.photoUrl}} />
+
+  <h2>{{collegueComplet.pseudo | uppercase }}</h2>
+  <p>{{collegueComplet.score | score}}</p>
+
+  <app-avis (change)="traiter($event)" [btn]="disabledBtn1" [btn2]="disabledBtn2"></app-avis>
+</div>
+<div>
+  <ul>
+    <li>
+      Nom : {{collegueComplet.nom}}
+    </li>
+    <li>
+      prenom : {{collegueComplet.prenom}}
+    </li>
+    <li>
+      email : {{collegueComplet.email}}
+    </li>
+    <li>
+      adresse : {{collegueComplet.adresse}}
+    </li>
+  </ul>
+</div>

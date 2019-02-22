@@ -1,4 +1,7 @@
+<button type="button" (click)="vider()" class="btn btn-secondary">Vider l'Historique</button>
+
 <div *ngFor="let obj of listeVotes; index as i" id="boutonSUpp">
+
   <div class="row">
     <img src={{obj.collegue.photoUrl}} />
     {{obj.collegue.pseudo}}<br>

@@ -1,9 +1,10 @@
 import { Injectable } from '@angular/core';
-import { Collegue, Avis, Vote, Personne } from '../models';
+import { Collegue, Avis, Vote, Personne, CollegueComplet } from '../models';
 import { Observable, of, Subject } from 'rxjs';
 import { tap } from 'rxjs/operators';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
+import { CollegueDetailComponent } from '../collegue-detail/collegue-detail.component';
 
 const URL_BACKEND = environment.backendUrl;
 const httpOptions = {
@@ -44,8 +45,17 @@ export class DataService {
 
   //201 créer une ressource OK 
   send(personne: Personne): Observable<Object> {
-    console.log("test send")
     return this._http.post(`${URL_BACKEND}/collegues`,
+      personne, httpOptions)
+  }
+
+  recupCollegueApi(matricule: string): Observable<CollegueComplet> {
+    return this._http.get<CollegueComplet>(`${URL_BACKEND}/collegues/api/` + matricule);
+  }
+
+
+  create(personne: Personne): Observable<Object> {
+    return this._http.post(`${URL_BACKEND}/collegues/create`,
       personne, httpOptions)
   }
 

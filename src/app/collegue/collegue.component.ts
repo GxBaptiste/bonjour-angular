@@ -31,7 +31,6 @@ export class CollegueComponent implements OnInit {
 
 
   testScore() {
-    console.log(this.collegue.score)
     if (this.collegue.score >= 4)
       this.collegue.score = 5;
     if (this.collegue.score <= -4)

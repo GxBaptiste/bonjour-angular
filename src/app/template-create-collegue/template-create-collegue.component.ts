@@ -5,17 +5,16 @@ import { DataService } from '../services/data.service';
 
 
 @Component({
-  selector: 'app-nouveau-collegue-template-form',
-  templateUrl: './nouveau-collegue-template-form.component.html',
-  styleUrls: ['./nouveau-collegue-template-form.component.css']
+  selector: 'app-template-create-collegue',
+  templateUrl: './template-create-collegue.component.html',
+  styleUrls: ['./template-create-collegue.component.css']
 })
-export class NouveauCollegueTemplateFormComponent implements OnInit {
+export class TemplateCreateCollegueComponent implements OnInit {
 
   personneNew: Personne = {
     matricule: '',
     pseudo: '',
-    URLImage: '',
-
+    URLImage: ''
   }
 
   constructor(private _srv: DataService) { }
@@ -24,7 +23,7 @@ export class NouveauCollegueTemplateFormComponent implements OnInit {
   }
 
   aCLique() {
-    let obj = this._srv.send(this.personneNew).subscribe();
+    let obj = this._srv.create(this.personneNew).subscribe();
     // this._srv.refresh();
   }
 

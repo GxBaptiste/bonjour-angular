@@ -28,4 +28,10 @@ export class HistoriqueVotesComponent implements OnInit {
     }
   }
 
+
+  vider(): void {
+    this.listeVotes = []
+  }
+
+
 }
