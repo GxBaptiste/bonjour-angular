@@ -31,3 +31,5 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 https://gxbaptiste.github.io/bonjour-angular/
 
 La fausse base de données spring se trouve dans mon depot git top-collegues-backend
+
+Les boutons sur les fiches détaillés de mes collègues ne fonctionnent actuellement pas.
