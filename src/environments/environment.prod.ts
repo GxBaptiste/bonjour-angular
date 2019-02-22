@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  backendUrl: 'https://bonjour-angular-et-spring.herokuapp.com/'
+  backendUrl: 'bonjour-angular-et-spring.herokuapp.com/'
 };
