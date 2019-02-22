@@ -1,0 +1,11 @@
+<form #Form="ngForm">
+  <ul>
+    <li><label>Matricule : </label><input type="text" name=matricule [(ngModel)]="personneNew.matricule" required />
+    </li>
+
+    <li><label>Pseudo : </label><input type="text" name="pseudo" #champPseudo="ngModel" [(ngModel)]="personneNew.pseudo"
+        required minlength="2" /></li>
+    <li><label>URL Image : </label><input type="text" name="URLImage" [(ngModel)]="personneNew.URLImage" /></li>
+  </ul>
+  <button [disabled]="Form.invalid" (click)="aCLique()" class="btn btn-success">Ajouter</button>
+</form>

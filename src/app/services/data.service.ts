@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Collegue, Avis, Vote } from '../models';
+import { Collegue, Avis, Vote, Personne } from '../models';
 import { Observable, of, Subject } from 'rxjs';
 import { tap } from 'rxjs/operators';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
@@ -40,6 +40,13 @@ export class DataService {
           // comme peek avec les streams Java 8
           tap(tableau => this.listeCollegues = tableau)
         )
+  }
+
+  //201 créer une ressource OK 
+  send(personne: Personne): Observable<Object> {
+    console.log("test send")
+    return this._http.post(`${URL_BACKEND}/collegues`,
+      personne, httpOptions)
   }
 
   listerVotes(): Observable<Vote> {

@@ -13,6 +13,8 @@ import { HistoriqueVotesComponent } from './historique-votes/historique-votes.co
 import { VoteDoneComponent } from './vote-done/vote-done.component';
 import { HttpClientModule } from '@angular/common/http';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { FormsModule } from '@angular/forms';
+import { NouveauCollegueTemplateFormComponent } from './nouveau-collegue-template-form/nouveau-collegue-template-form.component';
 
 @NgModule({
   declarations: [
@@ -25,12 +27,14 @@ import { NgxPaginationModule } from 'ngx-pagination';
     AccueilComponent,
     ScorePipe,
     HistoriqueVotesComponent,
-    VoteDoneComponent
+    VoteDoneComponent,
+    NouveauCollegueTemplateFormComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

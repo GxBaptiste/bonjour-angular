@@ -14,3 +14,10 @@ export interface Vote {
     collegue: Collegue,
     avis: Avis
 }
+
+
+export interface Personne {
+    matricule: string,
+    pseudo: string,
+    URLImage: string
+}
